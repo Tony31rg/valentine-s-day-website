@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valentine & Anniversary</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating hearts layer -->
+  <div id="hearts" aria-hidden="true"></div>
+
+  <!-- PAGE CONTAINER: use sections and show/hide with JS -->
+  <main class="pages">
+
+    <!-- Page 1: Landing -->
+    <section id="page-1" class="page active" aria-label="Landing">
+      <div class="center-card">
+        <img src="bouquet.jpg" alt="Bouquet placeholder" class="bouquet">
+        <h1 class="title">Happy Valentine's Day ❤️</h1>
+        <h2 class="subtitle">Happy 1st Anniversary ❤️</h2>
+
+        <button id="startBtn" class="romantic-btn" aria-label="Start">Are you ready for my presents?</button>
+      </div>
+    </section>
+
+    <!-- Page 2: Password -->
+    <section id="page-2" class="page" aria-label="Password Entry">
+      <div class="blur-bg"></div>
+      <div class="card">
+        <h2>Enter our Anniversary Date to continue 💕</h2>
+        <input id="passwordInput" type="text" placeholder="DD-MM-YYYY" aria-label="Anniversary date">
+        <div class="row">
+          <button id="pwSubmit" class="romantic-btn">Open</button>
+        </div>
+        <p id="pwMsg" class="pw-msg" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Page 3: Photo Gallery -->
+    <section id="page-3" class="page" aria-label="Photo Gallery">
+      <div class="content">
+        <h2>Our Photos ❤️</h2>
+        <p class="lead">A collection of our favorite moments. </p>
+
+        <div class="gallery heart-grid" id="gallery">
+          <!-- 10 photos arranged to form a heart shape (replace with your images) -->
+          <img src="Holding hand 1.jpg" alt="Last day at Chiang Rai" loading="lazy">
+          <img src="kid.jpg" alt="Kid version" loading="lazy">
+          <img src="couple dam.jpg" alt="At the dam" loading="lazy">
+          <img src="panda bunny.jpg" alt="Our real version" loading="lazy">
+          <img src="kiss me.jpg" alt="Kiss" loading="lazy">
+          <img src="kiss hand.jpg" alt="Kiss" loading="lazy">
+          <img src="kiss her.jpg" alt="Kiss" loading="lazy">
+          <img src="holding hand 2.jpg" alt="Holding hand" loading="lazy">
+          <img src="holding hand 3.jpg" alt="Holding hand" loading="lazy">
+          <img src="pretty girl.jpg" alt="My love" loading="lazy">
+        </div>
+
+        <!-- Bottom navigation: Back (left) and Next (right) -->
+        <div class="page-nav">
+          <button id="galleryBack" class="nav-btn">← Back</button>
+          <button id="galleryNext" class="nav-btn">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 4: Our Love Journey (map + day counter) -->
+    <section id="page-4" class="page" aria-label="Our Love Journey">
+      <div class="content">
+        <h2>Our Love Journey ❤️</h2>
+        <div class="journey-top">
+          <div class="days-hero">We have been together for <span id="daysCount" class="days">0</span> days ❤️</div>
+        </div>
+
+        <div class="journey-map" id="journeyMap">
+          <!-- Steps: each step can have an image under title -->
+          <div class="step">
+            <div class="step-circle">01</div>
+            <div class="step-card">
+              <h4>First Meeting</h4>
+              <img src="first photo.jpg" alt="First Meeting">
+            </div>
+          </div>
+
+          <div class="connector"></div>
+
+          <div class="step">
+            <div class="step-circle">02</div>
+            <div class="step-card">
+              <h4>Songkran Festival with my love</h4>
+              <img src="songkran.jpg" alt="Songkran Festival with my lov">
+            </div>
+          </div>
+
+          <div class="connector"></div>
+
+          <div class="step">
+            <div class="step-circle">03</div>
+            <div class="step-card">
+              <h4>Before she go back home</h4>
+              <img src="staring her.jpg" alt="Before she go back home">
+            </div>
+          </div>
+
+          <div class="connector"></div>
+
+          <div class="step">
+            <div class="step-circle">04</div>
+            <div class="step-card">
+            <h4>Last Birthday Together`</h4>
+              <img src="bd.jpg" alt="Last birthday together">
+            </div>
+          </div>
+        </div>
+        <!-- Bottom navigation for Journey: Back to Gallery and Next to Surprise -->
+        <div class="page-nav">
+          <button id="journeyBack" class="nav-btn">← Back</button>
+          <button id="journeyNext" class="nav-btn">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 5: Surprise Gift -->
+    <section id="page-5" class="page" aria-label="Surprise Gift">
+      <div class="content center">
+        <h2 class="surprise-title">Surprise Gift <span class="sparkle">🎁</span></h2>
+
+        <div class="surprise-wrap">
+          <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Open envelope">
+            <div class="env-flap"></div>
+            <div class="env-body"></div>
+            <div class="env-seal" aria-hidden="true">❤</div>
+          </div>
+
+          <div class="gift-box" id="giftBox" role="button" tabindex="0" aria-label="Open gift box">
+            <div class="lid"></div>
+            <div class="box"></div>
+            <div class="ribbon"></div>
+            <div class="bow">
+              <span class="loop left"></span>
+              <span class="knot"></span>
+              <span class="loop right"></span>
+            </div>
+            <div class="glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Page 5: Love Letter Modal -->
+  <div id="loveModal" class="modal" aria-hidden="true">
+    <div class="modal-bg"></div>
+    <div class="modal-card">
+      <button id="closeModal" class="close">×</button>
+      <div class="letter">
+        <h3 class="letter-title">My Love,</h3>
+        <p class="letter-body">
+          <!-- Placeholder love letter; replace with your real letter -->
+          Happy 1st Anniversary, my love ❤️
+
+Dear my love,
+
+We have been together for 365 days. We fought, we stayed, and we fixed things together. Thank you for always being by my side. You are the best gift in my life 🎁💖
+
+Thank you for helping your puppy become a better person 🐶✨ I am so happy to have you in my life.
+
+I want you to always be yourself when you are with me. Your puppy is trying his best to grow and provide for you. I want you to be proud of me one day.
+
+Thank you for loving me even when I’m not perfect. You are my safe place, my happiness, and my future. ❤️
+
+You mean so much to me, more than words can explain.
+I love everything about you ❤️ Your smile, your voice, your attitude, even your little mood sometimes. Everything about you makes me fall in love more every day.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Lightbox Modal -->
+  <div id="galleryModal" class="lightbox" aria-hidden="true">
+    <div class="lightbox-bg"></div>
+    <div class="lightbox-card">
+      <!-- X: close lightbox and return to main landing page -->
+      <button id="lbClose" class="close">×</button>
+      <button id="lbPrev" class="lb-nav">‹</button>
+      <img id="lbImage" src="" alt="Expanded photo">
+      <button id="lbNext" class="lb-nav">›</button>
+      <!-- Next Page: close lightbox and navigate to next site page -->
+      <button id="lbGotoNextPage" class="lb-nextpage">Next Page →</button>
+    </div>
+  </div>
+
+  <!-- Gift Modal (short letter + photo) -->
+  <div id="giftModal" class="modal" aria-hidden="true">
+    <div class="modal-bg"></div>
+    <div class="modal-card gift-modal">
+      <button id="closeGift" class="close">×</button>
+      <div class="gift-content">
+        <img src="Tony.jpg" alt="Your puppy" class="gift-photo">
+        <div class="gift-text">
+          <h3>For you, my love</h3>
+          <p>Your naughty puppy love you so much🐶✨</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
